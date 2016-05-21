@@ -8,7 +8,8 @@
 (declare get-results)
 (declare qpx-express-request-body)
 (declare flight-specifications)
-
+(declare get-user-response)
+(declare ask-questions)
 (def num-itineraries 25)
 (def default-passenger-args
   { :adultCount 1
@@ -16,6 +17,25 @@
     :infantInSeatCount 0
     :childCount 0
     :seniorCount 0 })
+
+(def prompts [[:origin "Enter the airport code of departure"]
+              [:dest "Enter the airport code of arrival"]
+              [:date-out "Enter the date of departure (provide
+                         in form \"YYYY-MM-DD\")"]
+              [:earliest-out "Enter the earliest time of day you would be
+                             willing to depart, in 24h format \"HH:MM\""]
+              [:latest-out   "Enter the latest time of day you would be
+                             willing to depart, in 24h format \"HH:MM\""]
+              [:date-back    "Enter the date of return (provide in form
+                             \"YYYY-MM-DD\")"]
+              [:earliest-back "Enter the earliest time of day you would be
+                              willing to return, in 24h format \"HH:MM\""]
+              [:latest-back   "Enter the latest time of day you would be
+                              willing to return, in 24h format \"HH:MM\""]
+              [:max-price     "Enter the maximum price you are willing to pay
+                              (e.g. \"USD500.00\")"]
+              ])
+
 (def qpx-express-key "IzaSyDRSEMJ2FgABK7D32HFixT22iPWyYL4bLwa")
 
 (def qpx-express-url "https://www.googleapis.com/qpxExpress/v1/trips/search")
@@ -26,7 +46,19 @@
   [& args]
   (println "Hello, World!"))
 
+(defn interactive-session
+  "Controls the interactive session when a user is in -i mode"
+  []
 
+)
+(defn get-user-response
+  [question]
+  do 
+    (println question)
+    (flush)
+    (read-line)
+)
+(defn ask-questions [qs] (reduce #(assoc %1 (%2 0) (get-user-response (%2 1))) {} qs))
 (defn process-res
   "Processes the response from QPX flights database"
   [res]

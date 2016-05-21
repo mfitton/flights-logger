@@ -1,0 +1,16 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+-main	flights_logger/core.clj	/^(defn -main$/;"	f
+default-passenger-args	flights_logger/core.clj	/^(def default-passenger-args$/;"	d
+flight-specifications	flights_logger/core.clj	/^(defn flight-specifications$/;"	f
+flights-logger.core	flights_logger/core.clj	/^(ns flights-logger.core$/;"	n
+get-results	flights_logger/core.clj	/^(defn get-results$/;"	f
+num-itineraries	flights_logger/core.clj	/^(def num-itineraries 25)$/;"	d
+process-res	flights_logger/core.clj	/^(defn process-res$/;"	f
+qpx-express-key	flights_logger/core.clj	/^(def qpx-express-key "IzaSyDRSEMJ2FgABK7D32HFixT22iPWyYL4bLwa")$/;"	d
+qpx-express-request-body	flights_logger/core.clj	/^(defn qpx-express-request-body$/;"	f
+qpx-express-url	flights_logger/core.clj	/^(def qpx-express-url "https:\/\/www.googleapis.com\/qpxExpress\/v1\/trips\/search")$/;"	d
